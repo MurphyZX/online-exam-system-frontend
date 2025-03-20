@@ -14,7 +14,7 @@
             <el-switch
               v-model="repoForm.isExercise"
               active-color="#13ce66"
-              inactive-color="#ff4949"
+              inactive-color="#cccccc"
             />
           </el-form-item>
         </el-form>
@@ -64,11 +64,7 @@ export default {
     },
     updateData(val) {
       this.repoForm.repoTitle = val.title
-      if (val.isExercise === 1) {
-        this.repoForm.isExercise = true
-      } else {
-        this.repoForm.isExercise = false
-      }
+      this.repoForm.isExercise = val.isExercise === 1;
     },
     visible(val) {
       this.$emit('input', val)

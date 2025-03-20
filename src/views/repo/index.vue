@@ -41,13 +41,13 @@
     <!-- 新增题库 -->
     <RepoDialog title="新增题库" v-model="addRepoDialogVisible" :onConfirm="addRepo" />
     <RepoDialog title="编辑题库" v-model="dialogFormVisible" :updateData="form" :onConfirm="updateRepo" />
-    
+
   </div>
 </template>
 
 <script>
 import { repoPaging, repoDel, repoUpdate, repoAdd } from '@/api/repo'
-import { ref, reactive, getCurrentInstance, nextTick } from "vue"
+// import { ref, reactive, getCurrentInstance, nextTick } from "vue"
 import RepoDialog from "@/components/repo/repoDialog/index.vue"
 export default {
   components: {
@@ -200,10 +200,6 @@ export default {
     },
     handleClose(done) {
       done()
-    },
-
-    searchRepo() {
-      this.getRepoPage(this.pageNum, this.pageSize, this.searchTitle)
     },
     handleSizeChange(val) {
       // 设置每页多少条逻辑
